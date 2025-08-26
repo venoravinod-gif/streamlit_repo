@@ -1,4 +1,4 @@
-mport streamlit as st
+import streamlit as st
 
 #main title
 st.title("This is the Main title")
