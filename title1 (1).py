@@ -1,5 +1,4 @@
 
-%%writefile stFunctions.py
 import streamlit as st
 
 
