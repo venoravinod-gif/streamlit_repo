@@ -1,4 +1,5 @@
 #upload homework(only text files allowed")
+import streamlit as st
 dr_files = st.file_uploader("Upload your DR files", type = ["png","jpg","jpeg"]
                             , accept_multiple_files=True,key="drawing")
 
