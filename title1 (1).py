@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -24,9 +23,9 @@ st.table(df) #static table just like screenshot
 st.subheader("Candy Sales interactive Table") 
 st.dataframe(df) #table is interactive...resize..scroll...sort
  
-st.metric("Best lollipop sale",f{df["Lollipop"].max()}) 
-st.metric("Best Chocolate sale",f{df["Chocolate"].max()})
-st.metric("Best Gummy Bear sale",f{df["Gummy Bear"].max()})
+st.metric("Best lollipop sale",f"{df["Lollipop"].max()}")
+st.metric("Best Chocolate sale",f"{df["Chocolate"].max()}")
+st.metric("Best Gummy Bear sale",f"{df["Gummy Bear"].max()}")
 
 st.subheader("Candy sales over time")
 st.line_chart(df.set_index("Day"))
