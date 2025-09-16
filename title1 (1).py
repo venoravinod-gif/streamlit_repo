@@ -1,29 +1,37 @@
 
 import streamlit as st
+import pandas as pd
+import numpy as np
 
+st.title("Candy Sales Dashboard")
 
-#main title
-st.title("This is the Main title")
-#section heading
-st.header("This is the section heading")
-#sub heading
-st.subheader("This is the subheading")
+#create candy sales data
+np.random.seed(42)
 
-#Normal paragraph
-st.write("This is my normal para. It's great for description")
+days = pd.date_range("2025-09-16",periods=7)
+candy_types = ["Lollilop","Chocolate","Gummy Bear"]
 
-st.markdown(
-    """
-    **I am the bold text**, *I am in Italic*,
-    and a [link to Google](https://www.google.com/)
-    """,
-    unsafe_allow_html=True
-)
+data = {"Day": days,
+        "Lollipop":np.random.randint(20,100,size=7),
+        "Chocolate":np.random.randint(30,100,size=7),
+        "Gummy Bear":np.random.randint(10,100,size=7)
+        }
 
-st.markdown(
-    """
-    <span style="color:red;">I am red text</span><br>
-    """,
-    unsafe_allow_html=True #permission to use html tages in markdown
-)
-#permission to use html tages in markdown
+df = pd.DataFrame(data)
+
+st.subheader("Candy Sales static Table")
+st.table(df) #static table just like screenshot
+st.subheader("Candy Sales interactive Table") 
+st.dataframe(df) #table is interactive...resize..scroll...sort
+ 
+st.metric("Best lollipop sale",f{df["Lollipop"].max()}) 
+st.metric("Best Chocolate sale",f{df["Chocolate"].max()})
+st.metric("Best Gummy Bear sale",f{df["Gummy Bear"].max()})
+
+st.subheader("Candy sales over time")
+st.line_chart(df.set_index("Day"))
+st.subheader("Candy sales comparision")
+st.bar_chart(df.set_index("Day"))
+
+st.subheader("Candy sales Growth")
+st.area_chart(df.set_index("Day"))
