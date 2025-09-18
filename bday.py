@@ -2,13 +2,9 @@
 import streamlit as st
 from datetime import date
 
-#title with style
-#st.markdown("**Happy Birthday**")#bold
-#st.markdown("_Happy Birthday_")#italic
-
 bday = st.date_input("Pick your birth date",
-    min_value = (1900,1,1),
-    max_value = (2025,12,31)
+    min_value = date(1900,1,1),
+    max_value = date(2025,12,31)
 )
 
 #ask for a fun message
