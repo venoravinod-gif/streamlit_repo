@@ -35,3 +35,4 @@ if pdf_file is not None:
     else:
       st.warning("Please enter question")  
 st.caption("Made with streamlit and Gemini Pro")
+
