@@ -1,7 +1,7 @@
 import streamlit as st
 import google.generativeai as genai
 import PyPDF2
-genai.configure(api_key="AIzaSyACpzKhjB4-_ESpBFqt9LZP0-KUPxfXWTk")
+genai.configure(api_key="AIzaSyAnn_UrQdTnTi5LMy1H7CG_w-77QwRA7ZI")
 
 model = genai.GenerativeModel("gemini-2.5-pro")
 
